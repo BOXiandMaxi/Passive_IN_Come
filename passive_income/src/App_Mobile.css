@@ -1,0 +1,708 @@
+/* App_Mobile.css - ฉบับดุดัน สำหรับมือถือ 380px ขึ้นไป */
+
+/* ========================================
+   📱 BASE MOBILE (380px - 768px)
+======================================== */
+@media only screen and (max-width: 768px) {
+  
+  /* Container หลัก */
+  .app-container {
+    padding: 12px;
+    min-height: 100vh;
+  }
+
+  /* Header - แนวตั้ง ดุดัน */
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    background: linear-gradient(90deg, transparent, #ff0080, #7928ca, transparent) bottom/100% 2px no-repeat;
+  }
+
+  h1 { 
+    font-size: 1.4rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  /* ช่องค้นหาเต็มความกว้าง */
+  .search-box { 
+    width: 100%;
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+  }
+
+  .search-box input:focus {
+    border-color: #ff0080;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  .search-box button {
+    padding: 14px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+    box-shadow: 0 5px 20px rgba(255, 0, 128, 0.4);
+    min-width: 80px;
+    transition: all 0.3s;
+  }
+
+  .search-box button:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 15px rgba(255, 0, 128, 0.6);
+  }
+
+  /* Grid - 2 คอลัมน์ สวยงาม */
+  .stock-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0;
+  }
+
+  /* Widget การ์ด - ดุดันแต่กระชับ */
+  .stock-widget {
+    padding: 16px 12px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #333;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-height: 180px;
+  }
+
+  .stock-widget:active {
+    transform: scale(0.98);
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.3);
+    border-color: #ff0080;
+  }
+
+  /* โลโก้ */
+  .logo-wrapper {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  /* ข้อมูลหุ้น */
+  .stock-info h3 { 
+    font-size: 1.05rem;
+    margin: 0 0 6px 0;
+    font-weight: 800;
+  }
+  
+  .price { 
+    font-size: 1.1rem;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+
+  .price.up { 
+    color: #00e676;
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+  }
+
+  .price.down { 
+    color: #ff5252;
+    text-shadow: 0 0 10px rgba(255, 82, 82, 0.4);
+  }
+  
+  .change { 
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-top: 8px;
+  }
+
+  .change.up {
+    background: rgba(0, 230, 118, 0.15);
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.3);
+  }
+
+  .change.down {
+    background: rgba(255, 82, 82, 0.15);
+    box-shadow: 0 0 12px rgba(255, 82, 82, 0.3);
+  }
+
+  /* ปุ่มลบ - ใหญ่พอกดได้สบาย */
+  .delete-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+    opacity: 0.9;
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+  
+  .delete-btn:active {
+    background: #ff5252;
+    color: white;
+    transform: scale(0.9);
+    box-shadow: 0 0 20px rgba(255, 82, 82, 0.6);
+  }
+
+  /* พอร์ตการลงทุน */
+  .portfolio-inputs {
+    margin-top: 12px;
+    padding: 10px;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .input-group {
+    gap: 8px;
+  }
+
+  .input-group label {
+    font-size: 0.7rem;
+  }
+
+  .input-group input {
+    width: 70px;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    border: 2px solid #444;
+  }
+
+  .input-group input:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+  }
+
+  .profit-display {
+    margin-top: 10px;
+    padding: 8px;
+  }
+
+  .profit-amt {
+    font-size: 0.95rem;
+  }
+
+  .total-val {
+    font-size: 0.8rem;
+  }
+
+  /* Empty State */
+  .empty-state {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .empty-state p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #888;
+  }
+
+  /* Dashboard Cards */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .big-number {
+    font-size: 2rem;
+  }
+
+  /* News Cards */
+  .news-card {
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* Menu Button */
+  .menu-btn {
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+
+  /* Back Button */
+  .back-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+
+  /* Chart Buttons */
+  .chart-btn,
+  .active-chart-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 16px;
+  }
+}
+
+/* ========================================
+   📱 SMALL MOBILE (380px - 480px)
+======================================== */
+@media only screen and (max-width: 480px) {
+  
+  .app-container {
+    padding: 10px;
+  }
+
+  h1 { 
+    font-size: 1.3rem;
+  }
+
+  /* ช่องค้นหา */
+  .search-box input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  
+  .search-box button {
+    padding: 12px 16px;
+    font-size: 13px;
+    min-width: 70px;
+  }
+
+  /* Grid ยังคง 2 คอลัมน์ แต่แคบลง */
+  .stock-grid {
+    gap: 10px;
+  }
+
+  .stock-widget {
+    padding: 14px 10px;
+    min-height: 170px;
+  }
+
+  .logo-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+
+  .stock-info h3 { 
+    font-size: 0.95rem;
+  }
+  
+  .price { 
+    font-size: 1rem;
+  }
+  
+  .change { 
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .delete-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .dashboard-card {
+    padding: 15px;
+  }
+
+  .big-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* ========================================
+   📱 EXTRA SMALL (380px ขึ้นไป - รองรับมือถือเก่า)
+======================================== */
+@media only screen and (min-width: 380px) and (max-width: 420px) {
+  
+  .stock-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stock-widget {
+    padding: 12px 8px;
+    min-height: 160px;
+    border-radius: 14px;
+  }
+
+  .logo-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .stock-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+
+  .change {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .search-box input {
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+
+  .search-box button {
+    padding: 11px 14px;
+    font-size: 12px;
+    min-width: 65px;
+  }
+}
+
+/* ========================================
+   📱 TABLET PORTRAIT (769px - 1024px)
+======================================== */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  .stock-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  
+  .stock-widget {
+    padding: 20px 16px;
+  }
+
+  .logo-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* ========================================
+   🔄 LANDSCAPE MODE (มือถือแนวนอน)
+======================================== */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  
+  .app-container {
+    padding: 10px 15px;
+  }
+
+  header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .search-box {
+    width: auto;
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .stock-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .stock-widget {
+    padding: 12px 10px;
+    min-height: 140px;
+  }
+  
+  .logo-wrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+  }
+
+  .stock-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .change {
+    font-size: 0.75rem;
+  }
+
+  .delete-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+/* ========================================
+   ✋ TOUCH OPTIMIZATION
+======================================== */
+@media (hover: none) and (pointer: coarse) {
+  
+  /* เพิ่มขนาด Touch Target ตาม iOS Guidelines (44x44px) */
+  .search-box button {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+  
+  .stock-widget {
+    min-height: 160px;
+  }
+
+  .delete-btn {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  /* เพิ่ม Active State */
+  .stock-widget:active {
+    transform: scale(0.97);
+  }
+
+  .menu-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #444 0%, #555 100%);
+  }
+}
+
+/* ========================================
+   🎨 DARK MODE SUPPORT
+======================================== */
+@media (prefers-color-scheme: dark) {
+  
+  body {
+    background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
+  }
+  
+  .stock-widget {
+    background: linear-gradient(135deg, #151515 0%, #252525 100%);
+    border-color: #2a2a2a;
+  }
+  
+  .search-box input {
+    background: linear-gradient(135deg, #151515 0%, #252525 100%);
+    border-color: #2a2a2a;
+  }
+
+  .delete-btn {
+    background: rgba(255, 0, 0, 0.25);
+  }
+  
+  .delete-btn:active {
+    background: #ff5252;
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.5);
+  }
+}
+
+/* ========================================
+   🎯 HIGH CONTRAST MODE
+======================================== */
+@media (prefers-contrast: high) {
+  
+  .delete-btn {
+    border: 2px solid #ff5252;
+    background: rgba(255, 0, 0, 0.4);
+  }
+
+  .stock-widget {
+    border-width: 3px;
+  }
+
+  .search-box input,
+  .search-box button {
+    border-width: 3px;
+  }
+}
+
+/* ========================================
+   ✨ ANIMATIONS 
+======================================== */
+
+/* Animation สำหรับการลบ */
+@keyframes deleteScale {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+.stock-widget.deleting {
+  animation: deleteScale 0.4s ease-out forwards;
+}
+
+/* Pulse effect สำหรับปุ่มสำคัญ */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.search-box button:active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* ========================================
+   🎭 SIDEBAR สำหรับมือถือ
+======================================== */
+@media only screen and (max-width: 768px) {
+  
+  .sidebar-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.8);
+  }
+
+  .sidebar-container.open {
+    width: 80vw;
+    max-width: 300px;
+  }
+
+  .sidebar-header {
+    padding: 16px;
+  }
+
+  .sidebar-header h3 {
+    font-size: 1rem;
+  }
+
+  .market-item {
+    padding: 14px 12px;
+    margin-bottom: 8px;
+  }
+
+  .stock-name {
+    font-size: 0.85rem;
+  }
+
+  .stock-price {
+    font-size: 0.75rem;
+  }
+
+  .market-change {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    min-width: 55px;
+  }
+
+  /* Overlay เมื่อเปิด Sidebar */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+}
+
+/* ========================================
+   📊 PORTFOLIO INPUTS - Mobile Optimization
+======================================== */
+@media only screen and (max-width: 768px) {
+  
+  .portfolio-inputs {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+  }
+
+  .input-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .input-group input {
+    background: #0a0a0a;
+    border: 2px solid #333;
+    color: #00d2ff;
+    transition: all 0.3s;
+  }
+
+  .input-group input:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+    transform: scale(1.02);
+  }
+
+  .profit-display.up {
+    background: rgba(0, 230, 118, 0.12);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.2);
+  }
+
+  .profit-display.down {
+    background: rgba(255, 82, 82, 0.12);
+    border: 1px solid rgba(255, 82, 82, 0.4);
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.2);
+  }
+}
+
+/* ========================================
+   🔧 FIX สำหรับ iOS Safari
+======================================== */
+@supports (-webkit-touch-callout: none) {
+  
+  /* ป้องกัน iOS zoom เมื่อ focus input */
+  input, 
+  select, 
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* แก้ปัญหา 100vh บน iOS */
+  .app-container {
+    min-height: -webkit-fill-available;
+  }
+
+  .content-area {
+    height: -webkit-fill-available;
+  }
+}

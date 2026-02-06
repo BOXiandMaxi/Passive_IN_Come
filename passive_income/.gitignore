@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # กฎ: ถ้าเป็นไฟล์ (-f) หรือโฟลเดอร์ (-d) ที่มีอยู่จริง ให้ข้ามไป (ไม่ต้อง Rewrite)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+
+  # นอกนั้นโยนไปที่ index.html ให้หมด
+  RewriteRule . /index.html [L]
+</IfModule>
+
+
+.env
+.env.local
+*.env
