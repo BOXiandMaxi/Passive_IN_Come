@@ -12,12 +12,12 @@
 
 | 🖥️ Main Dashboard (PC) | 📱 Mobile Interface |
 | :---: | :---: |
-| ![Main Dashboard](screenshots/dashboard_pc.png) | ![Mobile View](screenshots/dashboard_mobile.png) |
+| ![Main Dashboard](bord.jpg) | ![Mobile View](mobile.jpg) |
 | *หน้าจอหลักพร้อมกราฟพอร์ตโฟลิโอและรายการหุ้น* | *ดีไซน์ตอบโจทย์มือถือ ดุดัน ใช้งานง่าย* |
 
 | 🧠 AI Sentiment & Analysis | 📈 Technical Charts |
 | :---: | :---: |
-| ![AI Insights](screenshots/ai_analysis.png) | ![Technical Chart](screenshots/technical_chart.png) |
+| ![AI Insights](ai.jpg) | ![Technical Chart](graf.jpg) |
 | *ระบบวิเคราะห์ข่าวด้วย Gemini AI* | *กราฟเทคนิคเชิงลึกพร้อม RSI และ Prediction* |
 
 ---
